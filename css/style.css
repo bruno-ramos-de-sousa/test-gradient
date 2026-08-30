@@ -58,6 +58,9 @@ body {
   color: var(--azul-principal);
   font-size: 1.3rem;
 }
+.nav-principal a:hover, .nav-principal a:focus {
+  color: var(--preto-principal);
+}
 .nav-principal ul {
   display: flex;
   gap: var(--espacamento-lg);
@@ -144,7 +147,9 @@ main {
   border: 1px solid var(--marrom-principal);
   justify-items: center;
   align-content: center;
-  gap: var(--espacamento-lg);
+}
+.projetos .card:nth-child(3) {
+  border-color: var(--amarelo-principal);
 }
 .projetos .card h3 {
   font-size: 1.7rem;
@@ -204,6 +209,11 @@ main {
 .btn-github:hover span {
   color: var(--marrom-principal);
   transition: 0.3s;
+}
+.btn-github:focus, .btn-github:focus::after {
+  border: var(--off-white);
+  background-color: var(--off-white);
+  color: var(--preto-principal);
 }
 
 /* From Uiverse.io by Ali-Tahmazi99 */

@@ -66,6 +66,9 @@ body {
     text-decoration: none;
     color: var(--azul-principal);
     font-size: 1.3rem;
+    &:hover, &:focus {
+      color: var(--preto-principal);
+    }
   }
   ul {
     display: flex;
@@ -153,7 +156,9 @@ main {
     border: 1px solid var(--marrom-principal);
     justify-items: center;
     align-content: center;
-    gap: var(--espacamento-lg);
+    &:nth-child(3) {
+      border-color: var(--amarelo-principal);
+    }
     h3 {
       font-size: 1.7rem;
       padding: var(--espacamento-sm) 0px;
@@ -215,6 +220,11 @@ main {
   &:hover span {
     color: var(--marrom-principal);
     transition: 0.3s;
+  }
+  &:focus, &:focus::after {
+    border: var(--off-white);
+    background-color: var(--off-white);
+    color: var(--preto-principal);
   }
 }
 
