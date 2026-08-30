@@ -5,58 +5,276 @@
 }
 
 :root {
-  --verde-principal: #aab3ab;
-  --verde-secundario: #c4cbb7;
-  --verde-terciario: #ebefc9;
-  --laranja-fraco: #eee0b7;
-  --laranja-forte: #e8caaf;
+  --verde-principal: #009440;
+  --amarelo-principal: #fedd00;
+  --azul-principal: #302681;
   --off-white: #faf9f6;
-  --text-color: #4f3030;
+  --marrom-principal: #4f3030;
+  --preto-principal: #121212;
+
+  --espacamento-sm: 10px;
+  --espacamento-md: 15px;
+  --espacamento-lg: 20px;
+
+  --border-radius: 10px;
+
+  --font-body: "poppins", sans-serif;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: 0.4s ease-in-out both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s ease-in-out both fade-in;
 }
 
 body {
-  font-family: "poppins", sans-serif;
-  height: 100dvh;
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: var(--off-white);
-  color: var(--text-color);
+  background-image: radial-gradient(
+    var(--marrom-principal) 0.5px,
+    transparent 0.8px
+  );
+  background-size: 13px 13px;
+  object-fit: cover;
+  color: var(--azul-principal);
+  text-shadow: 0.1px 0.1px var(--marrom-principal);
+}
+
+.nav-principal {
+  background: linear-gradient(
+    180deg,
+    var(--verde-principal) 0%,
+    var(--amarelo-principal) 50%
+  );
+  align-items: center;
+  border-bottom: 1px solid var(--marrom-secundario);
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  width: 100dvw;
+  padding: var(--espacamento-lg);
+  a {
+    text-decoration: none;
+    color: var(--azul-principal);
+    font-size: 1.3rem;
+  }
+  ul {
+    display: flex;
+    gap: var(--espacamento-lg);
+  }
+}
+
+footer {
+  justify-items: center;
+  align-content: center;
+  background-color: var(--azul-principal);
+  min-height: 7dvh;
+  margin-top: auto;
+  color: var(--off-white);
+  .nav-footer ul {
+    display: flex;
+    gap: var(--espacamento-md);
+    margin-bottom: var(--espacamento-sm);
+    li a {
+      color: var(--off-white);
+    }
+  }
+}
+
+main {
+  flex: 1;
 }
 
 .list-without-bullets {
   list-style: none;
 }
 
-.nav-principal {
-  background: var(--laranja-fraco);
-  background: linear-gradient(
-    180deg,
-    rgba(232, 202, 175, 0.78) 0%,
-    rgba(238, 224, 183, 0.45) 20%,
-    rgba(238, 224, 183, 0) 75%
-  );
-  display: flex;
-  position: sticky;
-  justify-content: space-between;
-  width: 100dvw;
-  padding: 20px 20px;
-  a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.3rem;
+.me {
+  align-items: center;
+  align-content: center;
+}
+
+.hero {
+  justify-self: center;
+  text-align: center;
+  margin-top: 20dvh;
+  h2 {
+    margin: var(--espacamento-lg) 0px;
+    font-size: 2rem;
   }
-  ul {
-    display: flex;
-    gap: 20px;
+  p {
+    width: 80%;
+    justify-self: center;
+    margin: var(--espacamento-sm) 0px;
   }
 }
 
-footer {
+.container {
+  justify-self: center;
+  background-color: var(--off-white);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--espacamento-lg);
+  border: 0.1px solid var(--marrom-principal);
+  padding: 50px;
+  div {
+    display: flex;
+    margin-bottom: var(--espacamento-lg);
+    align-items: center;
+    text-align: start;
+  }
+}
+
+.projetos {
+  margin-top: 10dvh;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80dvw;
+  justify-self: center;
+  text-align: center;
+  gap: var(--espacamento-lg);
+  h2 {
+    grid-column: span 3;
+    font-size: 3rem;
+  }
+  .card {
+    padding: var(--espacamento-lg);
+    background-color: var(--off-white);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--marrom-principal);
     justify-items: center;
-    
+    align-content: center;
+    gap: var(--espacamento-lg);
+    h3 {
+      font-size: 1.7rem;
+      padding: var(--espacamento-sm) 0px;
+    }
+    img {
+      padding: var(--espacamento-lg) 0px;
+      width: 90%;
+    }
+    p {
+      text-align: justify;
+      width: 90%;
+      height: 115px;
+      padding: var(--espacamento-lg) 0px;
+    }
+  }
 }
 
-.nav-footer {
-  ul {
-    display: flex;
-    gap: 20px;
+.btn-github {
+  justify-items: center;
+  align-content: center;
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--azul-principal);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  background-color: var(--azul-principal);
+  color: var(--off-white);
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
   }
+  &::before {
+    left: -10px;
+    background: var(--amarelo-principal);
+  }
+  &::after {
+    right: -10px;
+    background: var(--verde-principal);
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 58%;
+  }
+  &:hover span {
+    color: var(--marrom-principal);
+    transition: 0.3s;
+  }
+}
+
+/* From Uiverse.io by Ali-Tahmazi99 */
+/* From uiverse.io by @Ali-Tahmazi99 */
+button {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--azul-principal);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  background-color: var(--azul-principal);
+  span {
+    color: var(--off-white);
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+  }
+  &::before {
+    left: -10px;
+    background: var(--amarelo-principal);
+  }
+  &::after {
+    right: -10px;
+    background: var(--verde-principal);
+  }
+  &:hover::before,
+  &:hover::after {
+    width: 58%;
+  }
+  &:hover span {
+    color: var(--marrom-principal);
+    transition: 0.3s;
+  }
+}
+
+#brasil {
+  width: 40px;
+}
+
+#eu {
+  width: 30%;
+}
+
+.estudos {
+  height: 50px;
+  object-fit: cover;
 }

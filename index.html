@@ -3,32 +3,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portifólio</title>
-    <link rel="icon" type="image/png" href="resources/computador.png" />
+    <link rel="icon" type="image/png" href="resources/brasil.png" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav class="nav-principal">
-      <div>
-        <img src="" alt="" />
-        <a href="#">Bruno Ramos de Sousa</a>
-      </div>
+      <img id="brasil" src="/resources/brasil.png" alt="bandeira do Brasil" />
+      <a href="" style="cursor: default">Bruno Ramos de Sousa</a>
+
       <ul class="list-without-bullets">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="">Inicio</a></li>
       </ul>
     </nav>
     <main>
-        <section class="hero">
-            <h2>Olá eu sou Bruno Ramos</h2>
-        </section>
+      <section class="hero">
+        <div class="container">
+          <h2>Olá, sou Bruno Ramos</h2>
+          <div>
+            <p>Estudante de Desenvolvimento de Sistemas no SENAI.</p>
+            <img
+              class="estudos"
+              src="/resources/senai_logo.png"
+              alt="Logo Senai"
+            />
+          </div>
+          <div>
+            <p>Estudante de Analise e Desenvolvimento de Sistemas</p>
+            <img
+              class="estudos"
+              src="/resources/fatec_ra_metropolitana_sp_capital_sao_paulo_cor.png"
+              alt="Logo Fatec"
+            />
+          </div>
+        </div>
+        <button
+          class="btn-primario"
+          onclick="
+            setTimeout(() => {
+              window.location.href = 'projetos.html';
+            }, 500)
+          "
+        >
+          <span>Ver meus projetos</span>
+        </button>
+      </section>
     </main>
     <footer>
       <nav class="nav-footer">
         <ul class="list-without-bullets">
           <li><a href="#">Twitter</a></li>
           <li><a href="#">Github</a></li>
-          <li>E-mail: <a href="#">brunoramosdsousa@gmai.com</a></li>
+          <li>
+            E-mail:
+            <a href="mailto:brunoramosdsousa@gmai.com"
+              >brunoramosdsousa@gmai.com</a
+            >
+          </li>
         </ul>
       </nav>
       <p>© 2026 Bruno Ramos — Todos os direitos reservados</p>
