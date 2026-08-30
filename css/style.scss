@@ -21,17 +21,7 @@
   --font-body: "poppins", sans-serif;
 }
 
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-old(root) {
-  animation: 0.4s ease-in-out both fade-out;
-}
-
-::view-transition-new(root) {
-  animation: 0.4s ease-in-out both fade-in;
-}
+//configuracoes da estrutura do corpo do site
 
 body {
   font-family: var(--font-body);
@@ -49,7 +39,7 @@ body {
   text-shadow: 0.1px 0.1px var(--marrom-principal);
 }
 
-.nav-principal {
+nav .nav-principal {
   background: linear-gradient(
     180deg,
     var(--verde-principal) 0%,
@@ -97,9 +87,7 @@ main {
   flex: 1;
 }
 
-.list-without-bullets {
-  list-style: none;
-}
+//configuracoes da tela inicial (index)
 
 .me {
   align-items: center;
@@ -120,7 +108,6 @@ main {
     margin: var(--espacamento-sm) 0px;
   }
 }
-
 .container {
   justify-self: center;
   background-color: var(--off-white);
@@ -135,6 +122,8 @@ main {
     text-align: start;
   }
 }
+
+//configuracao da tela de projetos
 
 .projetos {
   margin-top: 10dvh;
@@ -175,6 +164,8 @@ main {
     }
   }
 }
+
+//configuracao dos botoes
 
 .btn-github {
   justify-items: center;
@@ -221,15 +212,13 @@ main {
     color: var(--marrom-principal);
     transition: 0.3s;
   }
-  &:focus, &:focus::after {
+  &:focus + &:focus::after {
     border: var(--off-white);
     background-color: var(--off-white);
     color: var(--preto-principal);
   }
 }
 
-/* From Uiverse.io by Ali-Tahmazi99 */
-/* From uiverse.io by @Ali-Tahmazi99 */
 button {
   display: inline-block;
   width: 200px;
@@ -276,6 +265,8 @@ button {
   }
 }
 
+//classes e ids especificos
+
 #brasil {
   width: 40px;
 }
@@ -287,4 +278,8 @@ button {
 .estudos {
   height: 50px;
   object-fit: cover;
+}
+
+.list-without-bullets {
+  list-style: none;
 }
